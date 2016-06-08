@@ -7,8 +7,8 @@
 //
 
 import TransitionTreasury
-/// OminFocus app push transition implement.
-public class OMINTransitionAnimation: NSObject, TRViewControllerAnimatedTransitioning, TransitionInteractiveable {
+/// OmniFocus app push transition implement.
+public class OMNITransitionAnimation: NSObject, TRViewControllerAnimatedTransitioning, TransitionInteractiveable {
 
     public var transitionStatus: TransitionStatus
     
@@ -82,7 +82,7 @@ public class OMINTransitionAnimation: NSObject, TRViewControllerAnimatedTransiti
         UIView.animateWithDuration(transitionDuration(transitionContext), delay: 0, options: .CurveEaseInOut, animations: {
             fromVC!.view.layer.position.y -= topHeight
             self.bottomView.layer.position.y += bottomHeight
-            }) { (finished) -> Void in
+            }) { finished in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
                 self.bottomView.removeFromSuperview()
                 if !self.cancelPop {
